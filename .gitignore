@@ -32,3 +32,4 @@ yarn-error.log*
 .vercel
 
 /public/FoxitPDFSDKForWeb/
+package-lock.json

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@foxitsoftware/foxit-pdf-sdk-for-web-library": "^9.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
