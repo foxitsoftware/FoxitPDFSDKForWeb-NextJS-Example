@@ -22,13 +22,7 @@ cd nextjs-websdk
 npm install
 ```
 ### 3. Update the licenseSN and licenseKey values in `nextjs-websdk/src/pages/index.js` with your own licenseSN and licenseKey that you received from sales.
-### 4. Start snapshot serve.
-Navigate to `nextjs-websdk/public/FoxitPDFSDKForWeb/server/snapshot`, and execute:
-```shell
-npm install
-npm run start
-```
-### 5. Run project.
+### 4. Run project.
 - Development mode:
 ```shell
 npm run dev
@@ -36,6 +30,12 @@ npm run dev
 - Production mode:
 ```shell
 npm run build
+npm run start
+```
+### 5. Start snapshot serve.
+Navigate to `nextjs-websdk/public/FoxitPDFSDKForWeb/server/snapshot`, and execute:
+```shell
+npm install
 npm run start
 ```
 
@@ -176,13 +176,7 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
-### 7. Start snapshot serve.
-Navigate to `nextjs-websdk/public/FoxitPDFSDKForWeb/server/snapshot`, and execute:
-```shell
-npm install
-npm run start
-```
-### 8. Run project.
+### 7. Run project.
 - Development mode:
 ```shell
 npm run dev
@@ -190,5 +184,11 @@ npm run dev
 - Production mode:
 ```shell
 npm run build
+npm run start
+```
+### 8. Start snapshot serve.
+Navigate to `nextjs-websdk/public/FoxitPDFSDKForWeb/server/snapshot`, and execute:
+```shell
+npm install
 npm run start
 ```
