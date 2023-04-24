@@ -20,12 +20,14 @@ const nextConfig = {
           {
             from: path.resolve(libraryModulePath, 'lib'),
             to: path.resolve(__dirname, 'public/FoxitPDFSDKForWeb/lib'),
-            force: true
+            force: true,
+            info: {minimized: true},
           },
           {
             from: path.resolve(libraryModulePath, 'server'),
             to: path.resolve(__dirname, 'public/FoxitPDFSDKForWeb/server'),
-            force: true
+            force: true,
+            info: {minimized: true},
           }
         ]
       }),
