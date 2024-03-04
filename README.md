@@ -14,7 +14,7 @@ These guides are divided into two parts:
 
 ### 1. Clone the repository:
 ```shell
-git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-NextJS-Example.git next-websdk nextjs-websdk
+git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-NextJS-Example.git nextjs-websdk
 ```
 ### 2. Enter the directory and run npm install:
 ```shell
