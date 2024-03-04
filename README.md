@@ -3,7 +3,7 @@
 These guides are divided into two parts:
 
 - [Part 1: How to run this example](#part-1-how-to-run-this-example)
-- [Part 2: How to use FoxitPDFSDK for Web in Next.js](#part-2-how-to-use-foxitpdfsdk-for-web-in-next.js)
+- [Part 2: How to use FoxitPDFSDK for Web in Next.js](#part-2-how-to-use-foxitpdfsdk-for-web-in-nextjs)
 
 ## Prerequisites
 
@@ -12,28 +12,40 @@ These guides are divided into two parts:
 
 ## Part 1: How to run this example
 
-### 1. Clone the repository:
+### 1. Clone the repository
+
 ```shell
 git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-NextJS-Example.git nextjs-websdk
 ```
-### 2. Enter the directory and run npm install:
+
+### 2. Enter the directory and run npm install
+
 ```shell
 cd nextjs-websdk
 npm install
 ```
-### 3. Update the licenseSN and licenseKey values in `nextjs-websdk/src/pages/index.js` with your own licenseSN and licenseKey that you received from sales.
-### 4. Run project.
+
+### 3. Update the licenseSN and licenseKey values in `nextjs-websdk/src/pages/index.js` with your own licenseSN and licenseKey that you received from sales
+
+### 4. Run project
+
 - Development mode:
+
 ```shell
 npm run dev
 ```
+
 - Production mode:
+
 ```shell
 npm run build
 npm run start
 ```
-### 5. Start snapshot serve.
+
+### 5. Start snapshot serve
+
 Navigate to `nextjs-websdk/public/FoxitPDFSDKForWeb/server/snapshot`, and execute:
+
 ```shell
 npm install
 npm run start
@@ -41,20 +53,26 @@ npm run start
 
 ## Part 2: How to use FoxitPDFSDK for Web in Next.js
 
-### 1. Create project.
-Execute the command `npx create-next-app@latest` and follow the wizard to complete the setup: 
+### 1. Create project
+
+Execute the command `npx create-next-app@latest` and follow the wizard to complete the setup:
+
 - project name -> nextjs-websdk
 - use TypeScript -> No
 - use ESLint -> No
 - use `src/` directory -> Yes
 - use experimental `app/` directory -> No
 - import alias -> Type Enter key
-### 2. Install dependence.
+
+### 2. Install dependence
+
 ```shell
 cd nextjs-websdk
 npm install @foxitsoftware/foxit-pdf-sdk-for-web-library copy-webpack-plugin
 ```
-### 3. Update `nextjs-websdk/src/pages/index.js` to follow.
+
+### 3. Update `nextjs-websdk/src/pages/index.js` to follow
+
 ```jsx
 import Head from 'next/head';
 import {useEffect} from 'react';
@@ -126,8 +144,11 @@ export default function Home() {
 }
 
 ```
-### 4. Update the licenseSN and licenseKey values in `nextjs-websdk/src/pages/index.js` with your own licenseSN and licenseKey that you received from sales.
-### 5. Update `nextjs-websdk/next.config.js` to follow.
+
+### 4. Update the licenseSN and licenseKey values in `nextjs-websdk/src/pages/index.js` with your own licenseSN and licenseKey that you received from sales
+
+### 5. Update `nextjs-websdk/next.config.js` to follow
+
 ```js
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -169,7 +190,9 @@ const nextConfig = {
 
 module.exports = nextConfig
 ```
-### 6. Update `nextjs-websdk/src/pages/_app.js` to remove Next.js default global style:
+
+### 6. Update `nextjs-websdk/src/pages/_app.js` to remove Next.js default global style
+
 ```diff
 - import '@/styles/globals.css'
 + // import '@/styles/globals.css'
@@ -178,18 +201,26 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
-### 7. Run project.
+
+### 7. Run project
+
 - Development mode:
+
 ```shell
 npm run dev
 ```
+
 - Production mode:
+
 ```shell
 npm run build
 npm run start
 ```
-### 8. Start snapshot serve.
+
+### 8. Start snapshot serve
+
 Navigate to `nextjs-websdk/public/FoxitPDFSDKForWeb/server/snapshot`, and execute:
+
 ```shell
 npm install
 npm run start
