@@ -7,7 +7,7 @@ These guides are divided into two parts:
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en) and [npm](https://docs.npmjs.com/getting-started)
+- [Node.js](https://nodejs.org/en) >= v18.17.0 and [npm](https://docs.npmjs.com/getting-started)
 - @foxitsoftware/foxit-pdf-sdk-for-web-library >= 9.0.0
 
 ## Part 1: How to run this example
@@ -147,11 +147,11 @@ export default function Home() {
 
 ### 4. Update the licenseSN and licenseKey values in `nextjs-websdk/src/pages/index.js` with your own licenseSN and licenseKey that you received from sales
 
-### 5. Update `nextjs-websdk/next.config.js` to follow
+### 5. Update `nextjs-websdk/next.config.mjs` to follow
 
 ```js
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import path from 'path';
 const libraryModulePath = path.resolve('node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library');
 
 /** @type {import('next').NextConfig} */
@@ -171,13 +171,13 @@ const nextConfig = {
         patterns: [
           {
             from: path.resolve(libraryModulePath, 'lib'),
-            to: path.resolve(__dirname, 'public/FoxitPDFSDKForWeb/lib'),
+            to: path.resolve('./public/FoxitPDFSDKForWeb/lib'),
             force: true,
             info: {minimized: true},
           },
           {
             from: path.resolve(libraryModulePath, 'server'),
-            to: path.resolve(__dirname, 'public/FoxitPDFSDKForWeb/server'),
+            to: path.resolve('./public/FoxitPDFSDKForWeb/server'),
             force: true,
             info: {minimized: true},
           }
@@ -188,8 +188,14 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+export default nextConfig;
 ```
+
+**Note:**
+
+> Prior to `create-next-app@14.1.0`, the configuration file was named `next.config.js` (Refer to this PR: <https://github.com/vercel/next.js/pull/60494>),
+> and should be written in CommonJS style.
+>
 
 ### 6. Update `nextjs-websdk/src/pages/_app.js` to remove Next.js default global style
 

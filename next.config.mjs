@@ -1,5 +1,5 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import path from 'path';
 const libraryModulePath = path.resolve('node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library');
 
 /** @type {import('next').NextConfig} */
@@ -19,13 +19,13 @@ const nextConfig = {
         patterns: [
           {
             from: path.resolve(libraryModulePath, 'lib'),
-            to: path.resolve(__dirname, 'public/FoxitPDFSDKForWeb/lib'),
+            to: path.resolve('./public/FoxitPDFSDKForWeb/lib'),
             force: true,
             info: {minimized: true},
           },
           {
             from: path.resolve(libraryModulePath, 'server'),
-            to: path.resolve(__dirname, 'public/FoxitPDFSDKForWeb/server'),
+            to: path.resolve('./public/FoxitPDFSDKForWeb/server'),
             force: true,
             info: {minimized: true},
           }
@@ -36,4 +36,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+export default nextConfig;
