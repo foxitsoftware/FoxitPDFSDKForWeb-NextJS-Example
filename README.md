@@ -1,4 +1,4 @@
-# Integrating Foxit PDF SDK for Web with Next.js
+# Integrating Foxit PDF SDK for Web with Next.js (with app router)
 
 This is a minimal example project that demonstrates how to integrate the [Foxit PDF SDK for Web](https://developers.foxit.com/products/pdf-sdk/) into a Next.js application. The project was created using `create-next-app` and is designed to serve as a starting point for developers who want to add PDF viewing and annotation capabilities to their Next.js applications.
 
@@ -22,7 +22,7 @@ Before you begin, make sure you have the following installed:
 1. **Clone the repository:**
 
     ```bash
-    git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-NextJS-Example.git nextjs-websdk
+    git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-NextJS-Example.git --branch app-router --single-branch nextjs-websdk
     ```
 
 1. **Install dependencies:**
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following installed:
 
 1. **Obtain license key:**
 
-    To use the Foxit PDF SDK for Web, you need to obtain licence key from our [sales](https://developers.foxit.com/contact/). Once you have the license key, update the `licenseSN` and `licenseKey` values defined in `src/pages/index.js`.
+    To use the Foxit PDF SDK for Web, you need to obtain licence key from our [sales](https://developers.foxit.com/contact/). Once you have the license key, update the `licenseSN` and `licenseKey` values defined in `src/app/consts.js`.
 
 1. **Start the development server:**
 
@@ -67,12 +67,15 @@ What import alias would you like configured? @/*
 
 After the prompts, `create-next-app` will create a folder with your project name and install required dependencies.
 
+**Please note that in the current example, the App Router function needs to be enabled. Therefore, when prompted whether to use App Router, please select "Yes"**。
+
 From here, you can refer to the later section [Integrating into your own project](#integrating-into-your-own-project) to integrate Foxit PDF SDK for Web into your project.
 
 For more details on how to create a Next.js project, we recommend that you refer to the Next js official documentation:
 
 > <https://www.npmjs.com/package/create-next-app>
 > <https://nextjs.org/docs/getting-started/installation>
+> <https://nextjs.org/docs/app/building-your-application/routing>
 
 ## Integrating into your own project
 
@@ -139,7 +142,7 @@ In your Next.js components or pages where you want to use the PDF SDK, import th
 Here's a basic example of how you might integrate the PDF SDK into a Next.js component, with the key steps demonstrated in the following simplified code:
 
 ```js
-function Home() {
+function DemoGuide() {
     const elementRef = useRef();
     const pdfuiRef = useRef();
     useEffect(() => {
@@ -167,7 +170,7 @@ function Home() {
 }
 ```
 
-For completed implementation, please refer to the code in `src/pages/index.js`.
+For completed implementation, please refer to the code in `src/app/examples` directory.
 
 In this example, for the convenience of demonstration, we directly save the PDFUI instance on `Ref`. In actual development, we recommend saving the PDFUI instance on `Context`, which makes it easier to share PDFUI instances among different components.
 
