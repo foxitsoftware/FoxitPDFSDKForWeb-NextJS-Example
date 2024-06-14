@@ -26,6 +26,11 @@ export default function Home() {
           jr: {
             readyWorker: readyWorker,
           },
+          messageSyncServiceWorker: {
+            options:{
+                scope: '/FoxitPDFSDKForWeb/lib/'
+            }
+          }
         },
         renderTo: elementRef.current,
         appearance: UIExtension.appearances.adaptive,
