@@ -25,11 +25,6 @@ export default function Home() {
           libPath: "/FoxitPDFSDKForWeb/lib",
           jr: {
             readyWorker: readyWorker,
-          },
-          messageSyncServiceWorker: {
-            options:{
-                scope: '/FoxitPDFSDKForWeb/lib/'
-            }
           }
         },
         renderTo: elementRef.current,

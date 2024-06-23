@@ -237,3 +237,45 @@ npm run start
 ```
 
 After completing these operations, we can use the snapshot functionality.
+
+### Reference the `Service-Worker-Allowed` HTTP header
+
+Starting from FoxitPDFSDK for Web version `10.0.0`, since service worker is used, it is necessary to add this field in the HTTP response header of the Service Worker script. Its value is the maximum allowed scope path:
+
+```http
+Service-Worker-Allowed /;
+```
+
+#### Nginx 配置示例
+
+If you are using Nginx as your server, you can add the `Service-Worker-Allowed` response header by modifying the Nginx configuration file. Below is an example configuration：
+
+```nginx
+server {
+    location /sw.js {
+        add_header Service-Worker-Allowed /;
+    }
+}
+```
+
+#### Node Dev Server 配置示例
+
+If you use Node Dev Server for local development, you can add `Service-Worker-Allowed` response headers by configuring devServer. The following is a configuration example：
+
+```js
+// next.config.mjs
+module.exports = {
+    // 其他配置
+    async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*',
+        headers: [
+          { key: 'Service-Worker-Allowed', value: '/' },
+        ],
+      },
+    ];
+  }
+};
+```
