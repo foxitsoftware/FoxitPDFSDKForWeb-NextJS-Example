@@ -279,3 +279,17 @@ module.exports = {
   }
 };
 ```
+
+## Troubleshooting
+
+### Next.js 12 Styled-jsx Compatibility Issue
+
+Next.js 12's built-in style processing is incompatible with certain styled-jsx usage patterns. If you encounter the following error:
+
+```bash
+Failed to compile
+    -/pages/index.js
+    Error: failed to process index out of bounds: the len is 0 but the index is 0
+```
+
+**Solution:** Move the global styles `:global { ... }{}` from `index.js` to `styles/globals.css`.
