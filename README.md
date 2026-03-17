@@ -49,19 +49,19 @@ Before you begin, make sure you have the following installed:
 The official Next.js documentation suggests creating a new project via `create-next-app`. To create a project, run:
 
 ```bash
-npx create-next-app@latest
+npx create-next-app@14.1.1
 ```
 
 On installation, you'll see the following prompts:
 
 ```log
 What is your project named? nextjs-websdk
-Would you like to use TypeScript? No / Yes
-Would you like to use ESLint? No / Yes
-Would you like to use Tailwind CSS? No / Yes
-Would you like to use `src/` directory? No / Yes
-Would you like to use App Router? (recommended) No / Yes
-Would you like to customize the default import alias (@/*)? No / Yes
+Would you like to use TypeScript? No / Yes              ——>N
+Would you like to use ESLint? No / Yes                  ——>N
+Would you like to use Tailwind CSS? No / Yes            ——>N
+Would you like to use `src/` directory? No / Yes        ——>Y
+Would you like to use App Router? (recommended) No / Yes        ——>Y
+Would you like to customize the default import alias (@/*)? No / Yes    ——>N
 What import alias would you like configured? @/*
 ```
 
